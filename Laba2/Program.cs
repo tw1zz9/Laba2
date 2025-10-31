@@ -16,6 +16,10 @@
             m.Name = "Wolf";
             b.Name = "Crow";
 
+            Console.WriteLine(f);
+            Console.WriteLine(m);
+            Console.WriteLine(b);
+
             Console.WriteLine(f.Descrition());
             Console.WriteLine(m.Descrition());
             Console.WriteLine(b.Descrition());
