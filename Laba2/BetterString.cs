@@ -37,9 +37,11 @@ namespace Laba2
         // Оператор декремента, удаляющий последний символ в строке
         public static BetterString operator --(BetterString a)
         {
-            StringBuilder stringBuilder = new StringBuilder();
-            for (var i = 0; i < a.Data.Length - 1; i++) stringBuilder.Append(a.Data[i]);
-            a.Data = stringBuilder.ToString();
+            if (!string.IsNullOrEmpty(a.Data))
+            {
+                string new_str = new string(a.Data.AsSpan()[0..(a.Data.Length - 1)]);
+                a.Data = new_str;
+            }
             return a;
         }
 

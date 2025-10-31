@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Laba2
 {
-    public class AnimalWorld
-    {
-
+    public enum Dermis 
+    { 
+        Scales,
+        Fur, 
+        Feathers 
     }
 }
