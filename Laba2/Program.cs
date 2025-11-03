@@ -4,25 +4,39 @@
     {
         static void Main(string[] args)
         {
-            Fish f = new Fish("Shark", 4);
-            Mammals m = new Mammals("Bear", 20);
-            Birds b = new Birds("Parrot", 2);
+            Owl o = new Owl();
+            Console.WriteLine(o);
+            Console.WriteLine(o.Descrition());
+            
+            Console.WriteLine();
 
-            Console.WriteLine(f.Descrition());
-            Console.WriteLine(m.Descrition());
-            Console.WriteLine(b.Descrition());
+            Shark s = new Shark();
+            Console.WriteLine(s);
+            Console.WriteLine(s.Descrition());
 
-            f.Name = "okynb";
-            m.Name = "Wolf";
-            b.Name = "Crow";
+            Console.WriteLine();
 
-            Console.WriteLine(f);
-            Console.WriteLine(m);
-            Console.WriteLine(b);
+            Tiger t = new Tiger();
+            Console.WriteLine(t);
+            Console.WriteLine(t.Descrition());
 
-            Console.WriteLine(f.Descrition());
-            Console.WriteLine(m.Descrition());
-            Console.WriteLine(b.Descrition());
+            Console.WriteLine();
+
+            Parrot p = new Parrot();
+            Console.WriteLine(p);
+            Console.WriteLine(p.Descrition());
+
+            Console.WriteLine();
+
+            Lion l = new Lion();
+            Console.WriteLine(l);
+            Console.WriteLine(l.Descrition());
+
+            Console.WriteLine();
+
+            Crocodile c = new Crocodile();
+            Console.WriteLine(c);
+            Console.WriteLine(c.Descrition());
         }
 
         public static void BetterString()

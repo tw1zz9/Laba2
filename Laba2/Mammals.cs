@@ -9,10 +9,9 @@ namespace Laba2
 {
     public class Mammals: Animals
     {
-        private const string _defaultPrefix = "Mammal: ";
-        private readonly Dermis Skin = Dermis.Fur;
-
-        private string _realName;
+        private const string _defaultPrefix = "Mammal:";
+        
+        protected Dermis Skin = Dermis.Fur;
 
         public Mammals(): base() { }
         public Mammals(string name, int age = _defaultAge) : base(_defaultPrefix, age) 
@@ -28,7 +27,6 @@ namespace Laba2
             {
                 if (string.IsNullOrEmpty(value) || base.Name.Contains(value)) value = _defaultName;
                 base.Name = $"{_defaultPrefix} {value}";
-                _realName = value;
             }
         }
 
@@ -44,7 +42,7 @@ namespace Laba2
 
         public override string Descrition()
         {
-            return new string($"Mammal: {_realName}, Age of {Age}, covered in {Skin}");
+            return new string($"{Name}, Age of {Age}, covered in {Skin}");
         }
         public override string Sound()
         {

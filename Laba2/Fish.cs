@@ -8,10 +8,9 @@ namespace Laba2
 {
     public class Fish : Animals
     {
-        private const string _defaultPrefix = "Fish: ";
-        private readonly Dermis Skin = Dermis.Scales;
-
-        private string _realName;
+        private const string _defaultPrefix = "Fish:";
+        
+        protected Dermis Skin = Dermis.Scales;
 
         public Fish() : base() { }
         public Fish(string name, int age = _defaultAge) : base(_defaultPrefix, age)
@@ -27,7 +26,6 @@ namespace Laba2
             {
                 if (string.IsNullOrEmpty(value) || base.Name.Contains(value)) value = _defaultName;
                 base.Name = $"{_defaultPrefix} {value}";
-                _realName = value;
             }
         }
         public override int Age
@@ -42,7 +40,7 @@ namespace Laba2
 
         public override string Descrition()
         {
-            return $"Fish: {_realName}, Age of {Age}, covered in {Skin}";
+            return $"{Name}, Age of {Age}, covered in {Skin}";
         }
         public override string Sound()
         {

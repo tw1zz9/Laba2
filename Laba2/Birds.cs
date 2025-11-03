@@ -8,10 +8,9 @@ namespace Laba2
 {
     public class Birds: Animals
     {
-        private const string _defaultPrefix = "Bird: ";
-        private readonly Dermis Skin = Dermis.Feathers;
-
-        private string _realName;
+        private const string _defaultPrefix = "Bird:";
+        
+        protected Dermis Skin = Dermis.Feathers;
 
         public Birds() : base() { }
         public Birds(string name, int age = _defaultAge) : base(_defaultPrefix, age) 
@@ -27,7 +26,6 @@ namespace Laba2
             {
                 if (string.IsNullOrEmpty(value) || base.Name.Contains(value)) value = _defaultName;
                 base.Name = $"{_defaultPrefix} {value}";
-                _realName = value;
             }
         }
 
@@ -43,13 +41,12 @@ namespace Laba2
 
         public override string Descrition()
         {
-            return $"Bird: {_realName}, age of {Age}, covered in {Skin}";
+            return $"{Name}, age of {Age}, covered in {Skin}";
         }
         public override string Sound()
         {
             return "Birds can make a lot of sound, like \"CAAWR!\"";
         }
-
         public override string ToString()
         {
             return "Type - Bird";
