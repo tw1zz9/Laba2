@@ -11,16 +11,6 @@ namespace Laba2
         public Parrot(): base() { }
         public Parrot(string name, int age) : base(name, age) { }
 
-        public override string Name
-        {
-            get => base.Name;
-            set
-            {
-                if (string.IsNullOrEmpty(value) || base.Name.Contains(value)) value = _defaultName;
-                base.Name = value;
-            }
-        }
-
         public override string Descrition()
         {
             return base.Descrition() + "\n\tParrots van live up to 120 years!";

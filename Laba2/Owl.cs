@@ -11,16 +11,6 @@ namespace Laba2
         public Owl(): base() { }
         public Owl(string name, int age) : base("Owl: " + name) { }
 
-        public override string Name
-        {
-            get => base.Name;
-            set
-            {
-                if (string.IsNullOrEmpty(value) || base.Name.Contains(value)) value = _defaultName;
-                base.Name = value;
-            }
-        }
-
         public override string Descrition()
         {
             return base.Descrition() + "\n\tOwls can rotate their heads in 360 degrees!";

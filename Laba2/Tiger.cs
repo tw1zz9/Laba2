@@ -12,16 +12,6 @@ namespace Laba2
         public Tiger(): base() { }
         public Tiger(string name, int age): base(name, age) { }
 
-        public override string Name
-        {
-            get => base.Name;
-            set
-            {
-                if (string.IsNullOrEmpty(value) || base.Name.Contains(value)) value = _defaultName;
-                base.Name = value;
-            }
-        }
-
         public override string Descrition() 
             => base.Descrition() + "\n\tTigers are bigger and stronger that Lions, but they don`t have a crown..";
 
