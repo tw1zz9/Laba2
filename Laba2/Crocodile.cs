@@ -8,13 +8,11 @@ namespace Laba2
 {
     public sealed class Crocodile: Mammals
     {
-        private const string _defaultPrefix = "Crocodile: ";
-
         public Crocodile() : base() 
         {
             base.Skin = Dermis.Scales;
         }
-        public Crocodile(string name, int age) : base(_defaultPrefix + name, age) 
+        public Crocodile(string name, int age) : base(name, age) 
         { 
             base.Skin = Dermis.Scales; 
         }
@@ -25,7 +23,7 @@ namespace Laba2
             set
             {
                 if (string.IsNullOrEmpty(value) || base.Name.Contains(value)) value = _defaultName;
-                base.Name = _defaultPrefix + value;
+                base.Name = value;
             }
         }
 
@@ -41,7 +39,7 @@ namespace Laba2
 
         public override string ToString()
         {
-            return "Type - Crocodile";
+            return "Type - Crocodile\n" + Descrition();
         }
     }
 }

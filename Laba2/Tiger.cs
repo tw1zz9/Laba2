@@ -9,10 +9,8 @@ namespace Laba2
 {
     public sealed class Tiger: Mammals
     {
-        private const string _defaultPrefix = "Tiger";
-
         public Tiger(): base() { }
-        public Tiger(string name, int age): base(_defaultPrefix + name, age) { }
+        public Tiger(string name, int age): base(name, age) { }
 
         public override string Name
         {
@@ -20,7 +18,7 @@ namespace Laba2
             set
             {
                 if (string.IsNullOrEmpty(value) || base.Name.Contains(value)) value = _defaultName;
-                base.Name = _defaultPrefix + value;
+                base.Name = value;
             }
         }
 
@@ -29,6 +27,6 @@ namespace Laba2
 
         public override string Sound() => base.Sound() + "Tiger are really LOUD!";
 
-        public override string ToString() => "Type - Tiger";
+        public override string ToString() => "Type - Tiger\n" + Descrition();
     }
 }

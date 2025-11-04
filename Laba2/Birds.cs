@@ -49,7 +49,7 @@ namespace Laba2
         }
         public override string ToString()
         {
-            return "Type - Bird";
+            return "Type - Bird\n" + Descrition();
         }
     }
 }

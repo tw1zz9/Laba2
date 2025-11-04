@@ -50,7 +50,7 @@ namespace Laba2
         }
         public override string ToString()
         {
-            return "Type - Mammal";
+            return "Type - Mammal\n" + Descrition();
         }
     }
 }

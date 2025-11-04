@@ -48,7 +48,7 @@ namespace Laba2
         }
         public override string ToString()
         {
-            return "Type - Fish";
+            return "Type - Fish\n" + Descrition();
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Laba2
 {
 
-    public abstract class Animals
+    public abstract class Animals: IEquatable<Animals>
     {
         protected readonly string _defaultName = "Unknown";
         protected const int _defaultAge = 0;
@@ -48,9 +48,26 @@ namespace Laba2
 
         public abstract string Sound();
 
+
+        // Переписанные методы, наследованные от object 
         public override string ToString()
         {
-            return "Type - Animal";
+            return "Type - Animal\n" + Descrition();
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name, Age);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as Animals);
+        }
+
+        public bool Equals(Animals? other)
+        {
+            return other != null && Name == other.Name && Age == other.Age;
         }
     }
 }

@@ -8,10 +8,8 @@ namespace Laba2
 {
     public sealed class Parrot : Birds
     {
-        private const string _defaultPrefix = "Parrot: ";
-
         public Parrot(): base() { }
-        public Parrot(string name, int age) : base(_defaultPrefix + name, age) { }
+        public Parrot(string name, int age) : base(name, age) { }
 
         public override string Name
         {
@@ -19,7 +17,7 @@ namespace Laba2
             set
             {
                 if (string.IsNullOrEmpty(value) || base.Name.Contains(value)) value = _defaultName;
-                base.Name = _defaultPrefix + value;
+                base.Name = value;
             }
         }
 
@@ -35,7 +33,7 @@ namespace Laba2
 
         public override string ToString()
         {
-            return "Type - Parrot";
+            return "Type - Parrot\n" + Descrition();
         }
     }
 }

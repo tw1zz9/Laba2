@@ -8,8 +8,6 @@ namespace Laba2
 {
     public sealed class Shark: Fish
     {
-        private const string _defaultPrefix = "Shark: ";
-
         private readonly double _defaultWeight = 0;
         private readonly double _defaultLength = 0;
 
@@ -52,7 +50,7 @@ namespace Laba2
             Length = _defaultLength;
         }
 
-        public Shark(string name, int age, double weight, double length): base(_defaultPrefix + name, age)
+        public Shark(string name, int age, double weight, double length): base(name, age)
         {
             Weight = weight;
             Length = length;
@@ -62,6 +60,6 @@ namespace Laba2
             => $"Fish: {Name}, age of {Age}, covered in placoid {Skin}\n\tWeight: {Weight} kg, Length: {Length} m";
         public override string Sound() 
         => "Fish don`t make sounds, they are busy swiming.\n\tAnd Sharks can kill you, you know..";
-        public override string ToString() => "Type - Shark";
+        public override string ToString() => "Type - Shark\n" + Descrition();
     }
 }

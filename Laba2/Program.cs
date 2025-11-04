@@ -4,44 +4,51 @@
     {
         static void Main(string[] args)
         {
-            
+            BetterString();
+
+            Console.WriteLine();
+
+            AnimalS();
         }
 
-        private static void Ani()
+        public static void AnimalS()
         {
-            Owl o = new Owl();
-            Console.WriteLine(o);
-            Console.WriteLine(o.Descrition());
+            List<Animals> list = new List<Animals>();
+            list.Add(new Mammals("m1", 2));
+            list.Add(new Birds("b2", 3));
+            list.Add(new Fish("f3", 2));
+            list.Add(new Shark("s4", 3, 106.2, 2.3));
+            list.Add(new Tiger("t5", 5));
+            list.Add(new Parrot("p6", 2));
+            list.Add(new Owl("o7", 2));
+            list.Add(new Lion("l8", 10));
+            list.Add(new Crocodile("CR9", 8));
 
-            Console.WriteLine();
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+                Console.WriteLine(item.Sound());
+                Console.WriteLine("Hash Code of the entity: " + item.GetHashCode());
+                Console.WriteLine();
+            }
 
-            Shark s = new Shark();
-            Console.WriteLine(s);
-            Console.WriteLine(s.Descrition());
+            Console.WriteLine("\tПроверка работы функций Equal и GetHashCode:\n");
+            bool ifSomeAreEqual = false;
+            for (int i = 0; i < list.Count(); i++)
+            {
+                for (int j = i + 1; j < list.Count(); j++)
+                {
+                    if (list[i].Equals(list[j]) || list[i].GetHashCode() == list[j].GetHashCode())
+                    {
+                        ifSomeAreEqual = true;
+                        break;
+                    }
+                }
 
-            Console.WriteLine();
+                if (ifSomeAreEqual) break;
+            }
 
-            Tiger t = new Tiger();
-            Console.WriteLine(t);
-            Console.WriteLine(t.Descrition());
-
-            Console.WriteLine();
-
-            Parrot p = new Parrot();
-            Console.WriteLine(p);
-            Console.WriteLine(p.Descrition());
-
-            Console.WriteLine();
-
-            Lion l = new Lion();
-            Console.WriteLine(l);
-            Console.WriteLine(l.Descrition());
-
-            Console.WriteLine();
-
-            Crocodile c = new Crocodile();
-            Console.WriteLine(c);
-            Console.WriteLine(c.Descrition());
+            Console.WriteLine("Хотя бы одна пара элементов в списке одинакова?\nОтвет: " + ifSomeAreEqual);
         }
 
         public static void BetterString()
