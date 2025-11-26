@@ -21,7 +21,7 @@ namespace Laba2
         }
 
         public override string Name
-        { 
+        {
             get => base.Name;
             set
             {
